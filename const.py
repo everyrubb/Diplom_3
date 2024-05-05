@@ -15,7 +15,6 @@ class API:
     CREATE_ORDER = f'{MAIN_PAGE}/api/orders'
     DELETE_DATA = f'{MAIN_PAGE}/api/auth/user'
 
-
 class Ingredients:
     BUN_R2_D3 = '61c0c5a71d1f82001bdaaa6d'
     MAIN_PROTOSTOMIA = '61c0c5a71d1f82001bdaaa6f'
