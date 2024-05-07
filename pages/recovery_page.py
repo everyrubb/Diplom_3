@@ -1,6 +1,5 @@
 import allure
 
-from time import sleep
 from const import Const
 from locators.recovery_page_locators import RecoveryPageLocators
 from pages.base_page import BasePage
@@ -10,8 +9,6 @@ class RecoveryPage(BasePage):
     @allure.step("Открыть страницу восстановления пароля")
     def open_recovery_page(self):
         self.open_url(Const.RECOVERY_PAGE)
-        if self.driver.browser_name == "firefox":
-            sleep(1)
         self.wait_element_visibility_of_element_located(RecoveryPageLocators.HEADER_RECOVERY_PAGE)
 
     @allure.step("Ввести электронную почту на странице восстановления пароля")
@@ -37,7 +34,5 @@ class RecoveryPage(BasePage):
 
     @allure.step("Тапнуть на иконку глазика для открытия пароля")
     def click_on_eye_icon(self):
-        if self.driver.browser_name == "firefox":
-            sleep(1)
         self.click_on_element(RecoveryPageLocators.EYE_BUTTON)
         return self.find_element(RecoveryPageLocators.PASSWORD_INPUT_ACTIVE)

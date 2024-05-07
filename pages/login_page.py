@@ -2,8 +2,6 @@ import allure
 
 from const import Const
 from locators.login_page_locators import LoginPageLocators
-from locators.main_page_locators import MainPageLocators
-from locators.recovery_page_locators import RecoveryPageLocators
 from pages.base_page import BasePage
 
 class LoginPage(BasePage):
@@ -16,7 +14,6 @@ class LoginPage(BasePage):
     @allure.step("Тапнуть на кнопку «Восстановить пароль»")
     def click_recovery_button(self):
         self.click_on_element(LoginPageLocators.RECOVERY_BUTTON)
-        self.wait_element_element_to_be_clickable(RecoveryPageLocators.HEADER_RECOVERY_PAGE)
 
     @allure.step("Авторизоваться новым пользователем без заказа")
     def log_in(self, registration):
@@ -24,7 +21,7 @@ class LoginPage(BasePage):
         self.send_keys(LoginPageLocators.EMAIL_INPUT, email)
         self.send_keys(LoginPageLocators.PASSWORD_INPUT, password)
         self.click_on_element(LoginPageLocators.LOG_IN_BUTTON)
-        self.wait_element_presence_of_element_located(MainPageLocators.CREATE_ORDER_BUTTON)
+        self.wait_element_presence_of_element_located(LoginPageLocators.CREATE_ORDER_BUTTON)
 
     @allure.step("Авторизоваться")
     def log_in_main_page(self, registration):
@@ -38,5 +35,4 @@ class LoginPage(BasePage):
         self.send_keys(LoginPageLocators.PASSWORD_INPUT, password)
         self.wait_element_presence_of_element_located(LoginPageLocators.LOG_IN_BUTTON)
         self.click_on_element(LoginPageLocators.LOG_IN_BUTTON)
-        self.wait_element_presence_of_element_located(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
         return number

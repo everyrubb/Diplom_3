@@ -12,14 +12,12 @@ class BasePage:
 
     def open_url(self, url):
         self.driver.get(url)
-        if self.driver.browser_name == "firefox":
-            sleep(1)
 
     def find_element(self, locator):
         return self.driver.find_element(*locator)
 
     def find_all_element(self, locator):
-        WebDriverWait(self.driver, 15).until(EC.presence_of_all_elements_located(locator))
+        self.wait_element_presence_of_element_located(locator)
         return self.driver.find_elements(*locator)
 
     def click_on_element(self, locator):

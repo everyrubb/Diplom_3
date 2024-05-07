@@ -1,8 +1,6 @@
 import allure
 
 from const import Const
-from locators.feed_page_locators import FeedPageLocators
-from locators.login_page_locators import LoginPageLocators
 from locators.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
 
@@ -18,19 +16,12 @@ class MainPage(BasePage):
     def open_login_account(self):
         self.open_url(Const.MAIN_PAGE)
         self.click_on_element(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
-        self.wait_element_visibility_of_element_located(LoginPageLocators.HEADER_LOGIN_PAGE)
+        self.wait_element_visibility_of_element_located(MainPageLocators.HEADER_LOGIN_PAGE)
 
     @allure.step("Открыть страницу Конструктора")
     def open_constructor(self):
         self.click_on_element(MainPageLocators.CONSTRUCTOR_BUTTON)
         return self.find_element(MainPageLocators.HEADER_CONSTRUCTOR)
-
-    @allure.step("Открыть ленту заказа")
-    def open_order_feed(self):
-        self.click_on_element(FeedPageLocators.ORDER_FEED_BUTTON)
-        self.wait_element_visibility_of_element_located(FeedPageLocators.HEADER_ORDER_FEED)
-        self.find_element(FeedPageLocators.HEADER_ORDER_FEED)
-        return self.get_current_url()
 
     @allure.step("Открыть всплывающее окно «Детали ингредиента»")
     def open_ingredient_pop_up(self):

@@ -9,6 +9,7 @@ class MainPageLocators:
     HEADER_POP_UP = By.XPATH, "//h2[text()='Детали ингредиента']"
     CLOSE_POP_UP_BUTTON = By.XPATH, "//button[contains(@class, 'close')]"
     CLOSE_POP_UP = By.CLASS_NAME, "Modal_modal__P3_V5"
+    HEADER_LOGIN_PAGE = By.XPATH, "//h2[text()='Вход']"
     ADD_SECTION = By.XPATH, "//section[contains(@class, 'BurgerConstructor_basket__29Cd7')]"
     COUNTER_BUN = By.XPATH, "//p[@class='counter_counter__num__3nue1']"
     CREATE_ORDER_BUTTON = By.XPATH, "//button[text()='Оформить заказ']"

@@ -1,12 +1,12 @@
 class Const:
 
     MAIN_PAGE = 'https://stellarburgers.nomoreparties.site'
-    LOGIN_PAGE = 'https://stellarburgers.nomoreparties.site/login'
-    RECOVERY_PAGE = 'https://stellarburgers.nomoreparties.site/forgot-password'
-    RESET_PASSWORD = 'https://stellarburgers.nomoreparties.site/reset-password'
-    PROFILE_PAGE = 'https://stellarburgers.nomoreparties.site/account/profile'
-    HISTORY_PAGE = 'https://stellarburgers.nomoreparties.site/account/order-history'
-    FEED_PAGE = 'https://stellarburgers.nomoreparties.site/feed'
+    LOGIN_PAGE = f'{MAIN_PAGE}/login'
+    RECOVERY_PAGE = f'{MAIN_PAGE}/forgot-password'
+    RESET_PASSWORD = f'{MAIN_PAGE}/reset-password'
+    PROFILE_PAGE = f'{MAIN_PAGE}/account/profile'
+    HISTORY_PAGE = f'{MAIN_PAGE}/account/order-history'
+    FEED_PAGE = f'{MAIN_PAGE}/feed'
 
 class API:
     MAIN_PAGE = 'https://stellarburgers.nomoreparties.site'

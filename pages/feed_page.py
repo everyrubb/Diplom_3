@@ -1,5 +1,3 @@
-from time import sleep
-
 import allure
 
 from const import Const
@@ -14,10 +12,15 @@ class FeedPage(BasePage):
         self.open_url(Const.FEED_PAGE)
         self.wait_element_visibility_of_element_located(FeedPageLocators.HEADER_ORDER_FEED)
 
+    @allure.step("Открыть ленту заказа")
+    def open_order_feed(self):
+        self.click_on_element(FeedPageLocators.ORDER_FEED_BUTTON)
+        self.wait_element_visibility_of_element_located(FeedPageLocators.HEADER_ORDER_FEED)
+        self.find_element(FeedPageLocators.HEADER_ORDER_FEED)
+        return self.get_current_url()
+
     @allure.step("Проверка значения счетчика «Выполнено за все время»")
     def check_counter_all_time(self):
-        if self.driver.browser_name == "firefox":
-            sleep(1)
         self.wait_element_visibility_of_element_located(FeedPageLocators.COUNTER_ALL_TIME)
         counter = self.find_element(FeedPageLocators.COUNTER_ALL_TIME)
         return counter.text

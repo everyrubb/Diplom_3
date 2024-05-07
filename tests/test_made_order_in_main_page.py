@@ -12,9 +12,9 @@ class TestMadeOrderMainPage:
 
     @allure.title('Проверка перехода по клику на «Лента заказов»')
     @allure.description('Проверяем, что при тапе на «Лента заказов» пользователь переходит в ленту')
-    def test_check_open_order_feed(self, main_page):
+    def test_check_open_order_feed(self, main_page, feed_page):
         main_page.open_main_page()
-        assert main_page.open_order_feed() == Const.FEED_PAGE
+        assert feed_page.open_order_feed() == Const.FEED_PAGE
 
     @allure.title('Проверка открытия информации об ингредиенте»')
     @allure.description('Проверяем, что при тапе на «Лента заказов» пользователь переходит в ленту')
